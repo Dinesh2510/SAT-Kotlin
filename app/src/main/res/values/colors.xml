@@ -7,4 +7,36 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#4EB820</color>
+    <color name="colorPrimaryDark">#4EB820</color>
+    <color name="colorAccent">#FFBB86FC</color>
+    <color name="colorWarning">#FF7043</color>
+
+
+
+    <color name="grey_3">#f7f7f7</color>
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_20">#cccccc</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#534F4F</color>
+    <color name="red_400">#00B0FF</color>
+    <color name="red_300">#00B0FF</color>
+    <color name="blue_900">#651FFF</color>
+    <color name="orange">#F48F70</color>
+    <color name="bg_main">#F7F7F7</color>
+    <color name="bg_yellow">#FFEB3B</color>
+    <color name="green">#4EB820</color>
+    <color name="transparent">#00ffffff</color>
+    <color name="gray2">#d2d1d1</color>
+    <color name="textColor">#8a8484</color>
+    <color name="bg_red">#ffcc0000</color>
+    <color name="sign_up_txt">#848e9e</color>
+    <color name="gainsboro">#ddd</color>
+    <color name="disable_btn_color">#F2F2F2</color>
+    <color name="disable_txt_color">#AAAAB0</color>
+
+
 </resources>

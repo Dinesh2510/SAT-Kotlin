@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dash_gap">2dp</dimen>
+    <dimen name="dash_width">3dp</dimen>
+    <dimen name="dp3">3dp</dimen>
+
+
+    <dimen name="_10sdp">10dp</dimen>
+    <dimen name="_50sdp">50dp</dimen>
+
+
+    <dimen name="_100sdp">100.0dip</dimen>
+    <dimen name="_120sdp">120.0dip</dimen>
+    <dimen name="_140sdp">140.0dip</dimen>
+    <dimen name="_14sdp">14.0dip</dimen>
+    <dimen name="_150sdp">150.0dip</dimen>
+    <dimen name="_15sdp">15.0dip</dimen>
+    <dimen name="_16sdp">16.0dip</dimen>
+    <dimen name="_180sdp">180.0dip</dimen>
+    <dimen name="_18sdp">18.0dip</dimen>
+    <dimen name="_200sdp">200.0dip</dimen>
+    <dimen name="_20sdp">20.0dip</dimen>
+    <dimen name="_22sdp">22.0dip</dimen>
+    <dimen name="_25sdp">25.0dip</dimen>
+    <dimen name="_55sdp">55.0dip</dimen>
+    <dimen name="_80sdp">80.0dip</dimen>
+    <dimen name="_8sdp">8.0dip</dimen>
+</resources>
