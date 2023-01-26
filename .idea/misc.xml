@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/drawable/bg_ach.xml" value="0.1825" />
+        <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/drawable/card_dash_border.xml" value="0.1825" />
         <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1825" />
         <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/layout/activity_details_page.xml" value="0.25" />
         <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/layout/item_filter.xml" value="0.25" />
+        <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/layout/item_gray_divider.xml" value="0.25" />
+        <entry key="..\:/Apps/Neo/SportzKotlin/app/src/main/res/layout/item_player_list.xml" value="0.25" />
       </map>
     </option>
   </component>
