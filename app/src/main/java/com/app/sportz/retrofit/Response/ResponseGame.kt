@@ -18,8 +18,7 @@ class ResponseGame {
 
     @SerializedName("Teams")
     @Expose
-    var teams: Teams? = null
-
+    val teams: MutableMap<String, AllTeamsData>? =null
     @SerializedName("Notes")
     @Expose
     var notes: Notes? = null
@@ -46,18 +45,8 @@ class ResponseGame {
         var tourName: String? = null
     }
 
-    inner class Teams {
-        //this team
-        @SerializedName("4")
-        @Expose
-        var teamOne: TeamOne? = null
 
-        @SerializedName("5")
-        @Expose
-        var teamTwo: TeamTwo? = null
-    }
-
-    inner class TeamOne {
+    inner class AllTeamsData {
         @SerializedName("Name_Full")
         @Expose
         var nameFull: String? = null
@@ -78,26 +67,6 @@ class ResponseGame {
         }
     }
 
-    inner class TeamTwo {
-        @SerializedName("Name_Full")
-        @Expose
-        var nameFull: String? = null
-
-        @SerializedName("Name_Short")
-        @Expose
-        var nameShort: String? = null
-
-        @SerializedName("Players")
-        @Expose
-        private val players: MutableMap<String, PlayerDataModelled>? = null
-        fun getPlayers(): Map<String, PlayerDataModelled>? {
-            return players
-        }
-
-        fun setPlayers(key: String, playerDataModelled: PlayerDataModelled) {
-            players!![key] = playerDataModelled
-        }
-    }
 
     inner class ThisOver {
         @SerializedName("T")

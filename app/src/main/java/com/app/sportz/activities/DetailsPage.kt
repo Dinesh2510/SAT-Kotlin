@@ -1,5 +1,6 @@
 package com.app.sportz.activities
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -36,30 +37,35 @@ class DetailsPage : AppCompatActivity() {
         initData()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun initData() {
         val gson = Gson()
         responseGame = gson.fromJson(intent.getStringExtra("myjson"), ResponseGame::class.java)
         binding.lytTool.imgbck.setOnClickListener { view -> finish() }
-        binding.lytTool.toolbrLbl.setText(
-            responseGame?.teams?.teamOne?.nameShort + " vs " + responseGame?.teams?.teamTwo?.nameShort
-        )
-        str_team_one = responseGame?.teams?.teamOne?.nameShort.toString()
-        str_team_two = responseGame?.teams?.teamTwo?.nameShort.toString()
+
+
+        //Dynamic Teams data
+        val allTeamData: java.util.ArrayList<ResponseGame.AllTeamsData> =
+            java.util.ArrayList<ResponseGame.AllTeamsData>(responseGame!!.teams!!.values)
+
+        binding.lytTool.toolbrLbl.text =
+            allTeamData[0].nameShort + " vs " + allTeamData[1].nameShort
+        str_team_one = allTeamData[0].nameShort.toString()
+        str_team_two = allTeamData[1].nameShort.toString()
 
         //FilterView
         AddFilterOnView(str_team_one, str_team_two!!)
 
         //set Data to arraylist for team one
         val playerList_teams_one: ArrayList<PlayerDataModelled> =
-            ArrayList<PlayerDataModelled>(responseGame!!.teams?.teamOne?.getPlayers()?.values)
+            ArrayList(allTeamData[0].getPlayers()!!.values)
+
         //set Data to arraylist for team Two
         val playerList_teams_two: ArrayList<PlayerDataModelled> =
-            ArrayList<PlayerDataModelled>(
-                responseGame!!.teams?.teamTwo?.getPlayers()?.values
-            )
+            ArrayList(allTeamData[1].getPlayers()!!.values)
 
         //Teams One Data Set
-        binding.teamName.text = responseGame!!.teams?.teamOne?.nameFull
+        binding.teamName.text = allTeamData[0].nameFull
         binding.rvTeamOne.layoutManager =
             LinearLayoutManager(this@DetailsPage, LinearLayoutManager.VERTICAL, false)
         binding.rvTeamOne.adapter =
@@ -71,7 +77,7 @@ class DetailsPage : AppCompatActivity() {
             })
 
         //Teams Two Data Set
-        binding.teamNameTwo.text = responseGame!!.teams?.teamTwo?.nameFull
+        binding.teamNameTwo.text = allTeamData[1].nameFull
         binding.rvTeamTwo.layoutManager =
             LinearLayoutManager(this@DetailsPage, LinearLayoutManager.VERTICAL, false)
         binding.rvTeamTwo.adapter =

@@ -45,12 +45,16 @@ class MainActivity : AppCompatActivity(), Presenter.MainPresenter.View {
     @SuppressLint("SetTextI18n")
     override fun onGetResult(responseGame: ResponseGame?) {
 
-        binding.dateTime.text =
-            responseGame?.matchdetail?.match?.date + " at " + responseGame?.matchdetail?.match?.time
+        //Dynamic Teams data
+        val allTeamData: java.util.ArrayList<ResponseGame.AllTeamsData> =
+            java.util.ArrayList<ResponseGame.AllTeamsData>(responseGame!!.teams!!.values)
 
-        binding.location.text = responseGame?.matchdetail?.venue?.name
-        binding.teamName.text = responseGame?.teams?.teamOne?.nameFull + " vs " + responseGame?.teams?.teamTwo?.nameFull
-        binding.seeMore.setOnClickListener { view ->
+        binding.dateTime.text =
+            responseGame.matchdetail?.match?.date + " at " + responseGame.matchdetail?.match?.time
+        binding.location.text = responseGame.matchdetail?.venue?.name
+        binding.teamName.text = allTeamData[0].nameFull + " vs " +  allTeamData[1].nameFull
+
+        binding.seeMore.setOnClickListener {
             val gson = Gson()
             val intent = Intent(this@MainActivity, DetailsPage::class.java)
             val myJson = gson.toJson(responseGame)
